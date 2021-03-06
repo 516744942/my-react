@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+import Layout from './components/layout';
+import ReduxPage from './pages/ReduxPage';
+import RouterPage from './pages/routePage/RouterPage';
+let btnClick = (e, value) => {
+  console.log(e)
+  console.log(111)
+  console.log(value)
+}
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RouterPage></RouterPage>
+      <ReduxPage></ReduxPage>
+      <Layout showTopBar={false} showBottomBar={true} title="商城⾸⻚">
+        {{
+          content: (
+            <div> <h3>HomePage</h3>
+            </div>
+          ),
+          txt: "这是个⽂本",
+          btnClick: btnClick
+        }}
+      </Layout>
+      {/* <img src={logo} alt="" srcset="" /> */}
     </div>
+
   );
 }
 
