@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types'
-
 class lifeCycle extends Component {
   static defaultProps = {
     msg: '123'

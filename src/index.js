@@ -1,4 +1,6 @@
+// React负责 逻辑控制  数据 ->VDOM
 import React from 'react';
+// ReactDOM 渲染实际DOM, VDOM -> DOM
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';

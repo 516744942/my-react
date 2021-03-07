@@ -1,8 +1,8 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Layout from './components/layout';
-import ReduxPage from './pages/ReduxPage';
+// import Layout from './components/layout';
+// import ReduxPage from './pages/ReduxPage';
 import RouterPage from './pages/routePage/RouterPage';
 let btnClick = (e, value) => {
   console.log(e)
@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <RouterPage></RouterPage>
-      <ReduxPage></ReduxPage>
+      {/* <ReduxPage></ReduxPage>
       <Layout showTopBar={false} showBottomBar={true} title="商城⾸⻚">
         {{
           content: (
@@ -25,7 +25,7 @@ function App() {
           btnClick: btnClick
         }}
       </Layout>
-      {/* <img src={logo} alt="" srcset="" /> */}
+      <img src={logo} alt="" srcset="" /> */}
     </div>
 
   );

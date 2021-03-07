@@ -12,3 +12,4 @@ const reduxApp = () => (
 )
 
 export default reduxApp
+
