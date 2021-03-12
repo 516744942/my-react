@@ -66,3 +66,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### vscode  react 插件
+
+Ant Design Snippets
+Auto Close Tag
+Auto Complete Tag
+Auto Import
+Auto Rename Tag
+ESLint
+React-Native/React/Redux es6/es7
+React/Redux/react-router Snippets
+burkeholland.simple-react-snippets

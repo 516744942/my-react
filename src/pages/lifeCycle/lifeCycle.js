@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types'
+import { Button } from 'antd'
+// import "antd/dist/antd.css";
 class lifeCycle extends Component {
   static defaultProps = {
     msg: '123'
@@ -9,66 +11,33 @@ class lifeCycle extends Component {
   }
   constructor(props) {
     super(props)
-    this.state = { count: 0 }
+    this.state = { count: 1 }
     console.log('constructor')
   }
 
   static getDerivedStateFromProps(props, state) {
+    console.log('getDerivedStateFromProps')
     console.log('prop', props)
     console.log('state', state)
+
     let { count } = state;
-    // return count > 5 ? { count: 0 } : null
+    return count > 5 ? { count: 0 } : null
 
-  }
-  componentWillMount() {
+  } 
+  // componentWillMount() {
 
-  }
+  // }
   componentDidMount() {
     console.log('componentDidMount')
-    this.setState({
-      count: 5
-    })
-    setTimeout(() => {
-      this.setState({
-        count: 5
-      })
-      console.log('setTimeout', this.state.count)
-    }, 20);
-
-    console.log(this.state.count)
-    this.changeValue(1)
   }
 
-  setCounter = () => {
-    this.changeValue2(1);
-    this.changeValue2(2);
-  };
-  changeValue2 = v => {
-    this.setState(
-      (state, props) => {
-        return {
-          count: state.count + v
-        }
-      }
-    )
-    console.log('changeValue2', this.state.count)
-  }
-  changeValue = v => {
-    this.setState(
-      {
-        count: this.state.count + v
-      },
-      () => {
-        console.log("changeValue", this.state.count);
-      }
-    );
-  };
   shouldComponentUpdate(nextProps, nextState) {
-    // console.log('shouldComponentUpdate')
+    console.log('shouldComponentUpdate', nextState)
+    console.log('shouldComponentUpdate', this.state)
     return this.state.count !== nextState.count
   }
   // componentWillUpdate() {
-  //   console.log('12321')
+  //   console.log('componentWillUpdate')
   // }
   getSnapshotBeforeUpdate(nextProps, nextState) {
     console.log('getSnapshotBeforeUpdate')
@@ -76,7 +45,7 @@ class lifeCycle extends Component {
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log('componentDidUpdate')
-    console.log('snapshot', snapshot)
+    console.log('我是', snapshot)
   }
   change = () => {
     this.setState({
@@ -87,7 +56,7 @@ class lifeCycle extends Component {
 
 
   render() {
-    console.log('render')
+    console.log('render', this.props)
     let { count } = this.state
     return (
       <div>
@@ -101,8 +70,24 @@ class lifeCycle extends Component {
 }
 
 class Child extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { count: 0 }
+    console.log('constructor')
+  }
   componentWillUnmount() {
     console.log('Child componentWillUnmount')
+  }
+  static getDerivedStateFromProps(props, state) {
+    console.log('Child getDerivedStateFromProps')
+    return null
+
+  }
+  // componentWillMount() {
+
+  // }
+  componentDidMount() {
+    console.log('Child componentDidMount')
   }
   // static defaultProps = {
   //   count: '123'
@@ -112,10 +97,12 @@ class Child extends Component {
   //   this.state = {};
   // }
   render() {
+    console.log('Child render')
     let { count } = this.props
     return (
       <div>
         {count}
+        <Button type="primary">click</Button>
       </div>
     );
   }
